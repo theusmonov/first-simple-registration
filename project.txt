@@ -1,0 +1,12 @@
+#Kichik loyiha rejasi
+
+1. #Bu loyiha saytga Register va Login qilib kirish uchun simple kichik loyiha hisoblanadi.
+2. #User Register qilish.
+3. #Database ni tekshirish register bo'lgan payt.
+4. #User register qilgan bo'lsa saytga login qilib kiradi.
+5. #Register dan o'tkan userni passwordi hashlanib o'tishi kerak.
+6. #Register da o'tkan userni email va passwordini tekshirib token berib yuborish kerak.
+7. #Login qilayotgan user database da mavjud bo'lsa shu userni email va passwordini solishtirib token berib saytga kiritish.
+8. #Kodni boshlanishiga tushunarli simple darajada yozish.
+9. #Dastur module typeda yoziladi.
+10. #Oxirgi jarayonda dasturni qayta tekshirib chiqish.
