@@ -1,14 +1,28 @@
 import express from "express";
 import "dotenv/config"
 import router from "./routers/user.router.js";
+import sequelize from "./config/database.js";
 
 
 const app = express();
 
+
+app.use((req, res, next) => {
+    req.sequelize = sequelize
+    next()
+})
+
+
+try {
+    await sequelize.authenticate();
+    console.log('Databasega ulanish muvaffaqiyatli amalga oshdi');
+} catch (error) {
+    console.error('Databasega ulanishdagi xatolik', error);
+}
+
+
+
 app.use(router)
- 
-
-
 
 let port = process.env["PORT"] || 7000
 let host = process.env["HOST"] || "localhost"
