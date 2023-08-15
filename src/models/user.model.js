@@ -32,3 +32,4 @@ User.init({
        tableName: "users",
        timestamps: true
 })
+// await sequelize.sync({force: true})
