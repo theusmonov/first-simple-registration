@@ -23,6 +23,12 @@ try {
 
 
 app.use(router)
+app.use("/*", (req, res) => {
+    res.send({
+        status: 404,
+        message: req.baseUrl + " not found"
+    })
+})
 
 let port = process.env["PORT"] || 7000
 let host = process.env["HOST"] || "localhost"
