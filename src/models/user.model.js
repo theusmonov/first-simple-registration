@@ -18,6 +18,10 @@ User.init({
         type: DataTypes.STRING,
         allowNull: false
     },
+    img: {
+        type:  DataTypes.TEXT,
+        allowNull: false
+    },
     email: {
         type: DataTypes.STRING,
         allowNull: false

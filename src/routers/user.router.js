@@ -7,7 +7,7 @@ import { schema } from "../validate/validate.js";
 
 const router = Router();
 
-router.post("/register", registermiddleware(schema),USER_POST)
+router.post("/register", registermiddleware(schema), USER_POST)
 router.post("/login")
 router.get("/user")
 

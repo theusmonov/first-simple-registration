@@ -4,12 +4,14 @@ import { bcryptHash, jwtSignToken } from "../utils/helper.js";
 
 export const USER_POST = async (req, res) => {
   try {
+    const {filename} = req.filename
     const { username, gender, email, password } = req.body;
     const passHash = bcryptHash.hash(password)
     const tk = jwtSignToken.sign({email, password})
     const data = await User.create({
       username,
       gender,
+      img: `/img/${filename}`,
       email,
       password: passHash
     })

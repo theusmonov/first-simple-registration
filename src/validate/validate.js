@@ -33,7 +33,7 @@ export const schema = Joi.object({
 
 
     password: Joi.string()
-    .min(2) 
+    .min(4) 
     .max(30) 
     .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]/) 
     .messages({
