@@ -2,6 +2,7 @@ import express from "express";
 import "dotenv/config"
 import router from "./routers/user.router.js";
 import sequelize from "./config/database.js";
+import path from "path"
 
 
 const app = express();
@@ -29,7 +30,7 @@ app.use("/*", (req, res) => {
         message: req.baseUrl + " not found"
     })
 })
-
+app.use(express.static(path.join(process.cwd(), "upload")))
 let port = process.env["PORT"] || 7000
 let host = process.env["HOST"] || "localhost"
 

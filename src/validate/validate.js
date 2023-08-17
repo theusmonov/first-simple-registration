@@ -19,7 +19,12 @@ export const schema = Joi.object({
         "string.valid": "Bu turdagi insonlar mavjud emas",
         "any.required": "Gender talab qilinadi"
     }),
-    
+    img: Joi.binary()
+    .encoding("base64")
+    .messages({
+        "binary.base64": "Rasm formati yoki kodlash noto'g'ri",
+       
+    }),
 
 
     email: Joi.string()
