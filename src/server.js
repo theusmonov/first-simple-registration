@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 
 try {
     await sequelize.authenticate();
-    console.log('Databasega ulanish muvaffaqiyatli amalga oshdi');
+    console.log('Databasega ulanish muvaffaqiyatli amalga oshdi 🥳🥳🥳');
 } catch (error) {
     console.error('Databasega ulanishdagi xatolik', error);
 }
@@ -27,7 +27,7 @@ app.use(router)
 app.use("/*", (req, res) => {
     res.send({
         status: 404,
-        message: req.baseUrl + " not found"
+        message: req.baseUrl + " not found 🧐🧐🧐"
     })
 })
 app.use(express.static(path.join(process.cwd(), "upload")))
