@@ -42,7 +42,7 @@ export const schema = Joi.object({
     .max(30) 
     .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]/) 
     .messages({
-        "string.pattern.base": "Password must contain mixed characters (lowercase, uppercase, digit)."
+        "string.pattern.base": "Parol aralash belgilardan iborat bo'lishi kerak (kichik, katta harf, raqam)."
     })
     .required()
 })
