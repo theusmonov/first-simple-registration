@@ -6,11 +6,10 @@ import { upload } from "../utils/multer.js";
 
 
 
+
 const router = Router();
 
 router.post("/register", upload.single("img"), registermiddleware(schema), USER_POST)
 router.post("/login", USER_LOGIN)
-// router.get("/user")
-
 
 export default (router);

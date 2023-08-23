@@ -28,7 +28,6 @@ export const USER_POST = async (req, res) => {
 export const USER_LOGIN = async (req, res) => {
   try {
     const userData = req.body
-
     const ress  = await LOGINUSER(userData, res)
     return res.send(ress)
   } catch (err) {

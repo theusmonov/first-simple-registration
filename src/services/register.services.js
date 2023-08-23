@@ -7,7 +7,7 @@ export const REGISTERUSER = async (userData, filename) => {
     try {
         const {username, gender, email, password } = userData
         const passHash = bcryptHash.hash(password)
-        const token = jwtSignToken.sign({email, password})
+        const token = jwtSignToken.sign({username, password})
 
         const checkUser = await User.findAll({
             where: {

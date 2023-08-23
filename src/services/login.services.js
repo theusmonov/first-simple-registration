@@ -4,7 +4,7 @@ import { bcryptHash, jwtSignToken } from "../utils/helper.js";
 export const LOGINUSER = async (userData, res) => {
     try {
         const {username, password} = userData
-        const token = jwtSignToken.sign(password, username)
+        const token = jwtSignToken.sign(username, password)
 
         const user = await User.findOne({
             where: {
@@ -19,7 +19,10 @@ export const LOGINUSER = async (userData, res) => {
         }
         const checkPassword = bcryptHash.compare(password, user.password);
         if(!checkPassword){
-            return ("Malumotlar to'g'ri kelmayabdi")
+            res.status(404).json({
+                message: "Malumotlar to'g'ri kelmayabdi"
+            })
+            return 
         }
         return {
             message: "Xush kelibsiz",
